@@ -1,7 +1,8 @@
+
 const mongoose = require('mongoose');
 
 
-//defining the schema for the AttendanceManager
+//Defining the schema for the AttendanceManager
 const attendanceManagerSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -9,7 +10,7 @@ const attendanceManagerSchema = new mongoose.Schema({
         unique: true,
         trim: true,
     },
-    passwrd: {
+    password: {
         type: String,
         required: true,
     },
@@ -18,10 +19,9 @@ const attendanceManagerSchema = new mongoose.Schema({
         default: 'Attendance Manager',
         enum: ['Attendance Manager', 'Admin'],
     },
-    timestamps: true,
-
+  //  timestamps: true,
 });
 
 const AttendanceManager = mongoose.model('AttendanceManager', attendanceManagerSchema);
 
-module.exports = AttendanceManager
+module.exports = AttendanceManager;
